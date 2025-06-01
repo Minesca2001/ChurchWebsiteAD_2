@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Horarios y detalles de los servicios ofrecidos en nuestra iglesia.">
+    <title>Servicios - Iglesia</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<style>
+    /* Estilo del fondo del modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Contenido del modal */
+    .modal-content {
+      background-color: white;
+      padding: 40px;
+      border-radius: 50px;
+      width: 350px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .textbox {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: none;
+      border-bottom: 2px solid #ddd;
+      outline: none;
+      background: none;
+    }
+
+    input:focus {
+      border-bottom: 2px solid #007BFF;
+    }
+
+    label {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      transition: 0.3s;
+      color: #888;
+      pointer-events: none;
+    }
+
+    input:focus + label,
+    input:not(:placeholder-shown) + label {
+      top: -10px;
+      left: 0;
+      color: #007BFF;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    a {
+      text-align: center;
+      display: block;
+      margin-top: 15px;
+      color: #007BFF;
+      text-decoration: none;
+    }
+  </style>
+<!-- Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <h3>Iniciar Sesión</h3>
+    <div class="textbox">
+      <input type="text" id="usuario" placeholder=" " required>
+      <label for="usuario">Usuario</label>
+    </div>
+    <div class="textbox">
+      <input type="password" id="clave" placeholder=" " required>
+      <label for="clave">Contraseña</label>
+    </div>
+    <button onclick="cerrarModal()">Ingresar</button>
+    <a href="#">¿Olvidaste tu contraseña?</a>
+  </div>
+</div>
+
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.jpg" alt="Logo Iglesia" width="70"> Iglesia Asamblea de Dios "El Puerto"
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Sobre Nosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Eventos.html">Eventos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Recursos.html">Recursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Donaciones.html">Donaciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Miembros.html">Miembros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contacto.html">Contacto</a></li>
+					<li class="nav-item"><a class="nav-link" href="Login.html">Login</a></li>
+					<li class="nav-item"><a class="nav-link" href="Configuracion y Accesibilidad.html">Login</a></li>
+					
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido -->
+    <header class="py-5 text-center bg-primary text-white">
+        <div class="container">
+            <h1>Servicios</h1>
+            <p>Explora nuestros horarios y servicios disponibles.</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Horarios de Servicios</h2>
+            <ul class="list-group">
+				<li class="list-group-item">Domingo: Servicio General - 9:00 AM</li>
+				<li class="list-group-item">Lunes: Estudio Reglamento Biblico - 6:00 PM</li>
+                <li class="list-group-item">Martes: Escuela Biblica - 7:00 PM</li>
+                <li class="list-group-item">Miércoles: Servicio de Damas Y Reunión de ExploradoresS - 7:00 PM</li>
+				<li class="list-group-item">Jueves: Servicio de Nuevos Creyentes - 6:00 PM</li>
+				<li class="list-group-item">Viernes: Servicio de Hombres de Honor - 7:00 PM</li>
+                <li class="list-group-item">Sábado: Servicio de Jóvenes - 7:00 PM</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Iglesia Asamblea de Dios "El Puerto". Todos los derechos reservados.</p>
+        </div>
+    </footer>
+<script src="modal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
