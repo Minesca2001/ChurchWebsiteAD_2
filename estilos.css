@@ -1,3 +1,177 @@
+/* Archivo CSS para la página de la Iglesia */
+
+/* General */
+        body {
+            font-family: Times New Roman, Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease;
+        }
+        .auditorium {
+            display: grid;
+            gap: 2px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .seat {
+            width: 30px;
+            height: 30px;
+            background-color: #90ee90;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .seat:hover {
+            transform: scale(1.1);
+        }
+        .seat.occupied {
+            background-color: #ff4d4d;
+            cursor: not-allowed;
+        }
+		#info {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #customization-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 320px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            transform: translateX(100%);
+        }
+        #customization-panel.open {
+            transform: translateX(0);
+        }
+        #customization-panel h4 {
+            margin-top: 20px;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.2rem;
+        }
+        #customization-panel label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        #customization-panel input[type="color"],
+        #customization-panel input[type="range"] {
+            margin-top: 10px;
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #customization-panel button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        #customization-panel button:hover {
+            background-color: #0056b3;
+        }
+        .customization-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 2000;
+            transition: background-color 0.3s ease;
+        }
+        .customization-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            margin-top: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+		/* Contador de asientos */
+        #seat-count {
+            margin-top: 20px;
+        }
+
+        #seat-count span {
+            font-weight: bold;
+        }
+
+        /* Panel de herramientas */
+        #tool-panel {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 350px;
+            right: 50px;
+            display: none;
+        }
+
+        #tool-panel.open {
+            display: block;
+        }
+
+        #tool-panel button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #tool-panel button:hover {
+            background-color: #555;
+        }
+
+        /* Botón para abrir el panel de herramientas */
+        #toggle-tools {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            top: 300px;
+            right: 50px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #toggle-tools:hover {
+            background-color: green;
+        }
 /* General Styles */
 
 * {

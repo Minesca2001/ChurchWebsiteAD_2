@@ -1,6 +1,6 @@
 // Panel de herramientas
         const toolPanel = document.getElementById("tool-panel");
-        const toggleToolsButton = document.getElementById("toggle-tools");
+        const toggleToolsButton = document.getElementById("collapse-toggle");
         toggleToolsButton.addEventListener("click", () => {
             toolPanel.classList.toggle("open");
         });
@@ -190,3 +190,12 @@ document.getElementById("importSeats").addEventListener("change", event => {
 
         // Ejecutar la creación del auditorio
         createAuditorium();
+		// Colapsar o expandir la barra lateral
+document.getElementById("collapse-toggle").addEventListener("click", () => {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("collapsed");
+
+    const icon = document.querySelector("#collapse-toggle i");
+    icon.classList.toggle("fa-angle-double-left");
+    icon.classList.toggle("fa-angle-double-right");
+});
